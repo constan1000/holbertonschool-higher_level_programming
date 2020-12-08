@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 def islower(c):
-        "this checks for lower case character"
-            asc = ord(c)
-                if asc in range(97, 123):
-                            return True
+            numb = ord(c)
+                if numb >= 97 and numb <= 122:
+                                return True
                 else:
-                            return False
+                                return False
