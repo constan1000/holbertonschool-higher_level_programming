@@ -55,8 +55,8 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.width):
                 rect += "#"
-                rect += "\n"
-                return rect
+            rect += "\n"
+        return rect
             
     def __repr__(self):
         """ Eval Magic ? """
