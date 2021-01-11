@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-"""class"""
+""" Defining a Square class contains The size ? """
 
 
 class Square:
-            """square class"""
-
-                def __init__(self, size=0):
-                                """size"""
-                                        if type(size) is not int:
-                                                            raise TypeError("size must be an integer")
-                                        elif size < 0:
-                                                            raise ValueError("size must be >= 0")
-                                                            self.__size = size
-                                                                pass
+                """ New item SIZEEEE """
+                    def __init__(self, size=0):
+                                        """ Initialize the size ? please ?
+        Do verification also please"""
+                                                if type(size) != int:
+                                                                        raise TypeError("size must be an integer")
+                                                elif size < 0:
+                                                                        raise ValueError("size must be >= 0")
+                                                                    self.__size = size
