@@ -1,61 +1,59 @@
-#!/usr/bin/python3
-""" Square class """
+##!/usr/bin/python3
+""" Defining a Square class contains The size ? """
 
 
 class Square:
-        """ Constructor """
+        """ New item SIZEEEE """
 
             def __init__(self, size=0, position=(0, 0)):
-                        self.size = size
-                                self.position = position
+                        """ Initialize the size ? please ?
+        Do verification also please"""
+                                self.size = size
+                                        self.position = position
 
-                                    """ Define Square area """
+                                            @property
+                                                def size(self):
+                                                            """ Retrieving it ?"""
+                                                                    return self.__size
 
-                                        def area(self):
-                                                    res = self.__size * self.__size
-                                                            return res
+                                                                    @size.setter
+                                                                        def size(self, nsize):
+                                                                                    """ Setting the Mine ?"""
+                                                                                            if type(nsize) != int:
+                                                                                                            raise TypeError("size must be an integer")
+                                                                                            elif nsize < 0:
+                                                                                                            raise ValueError("size must be >= 0")
+                                                                                                                self.__size = nsize
 
-                                                            """ Getter size """
-                                                                @property
-                                                                    def size(self):
-                                                                                return self.__size
+                                                                                                                    @property
+                                                                                                                        def position(self):
+                                                                                                                                    """get the position ?"""
+                                                                                                                                            return self.__position
 
-                                                                                """ Setter size """
-                                                                                    @size.setter
-                                                                                        def size(self, value):
-                                                                                                    if type(value) != int:
-                                                                                                                    raise TypeError("size must be an integer")
-                                                                                                    elif value < 0:
-                                                                                                                    raise ValueError("size must be >= 0")
-                                                                                                                        self.__size = value
+                                                                                                                                            @position.setter
+                                                                                                                                                def position(self, value):
+                                                                                                                                                            """set the position"""
+                                                                                                                                                                    if type(value) == tuple and len(value) == 2 and \
+                                                                                                                                                                                  type(value[0]) == int and value[0] >= 0 and \
+                                                                                                                                                                                             type(value[1]) == int and value[1] >= 0:
+                                                                                                                                                                                    self.__position = value
+                                                                                                                                                                    else:
+                                                                                                                                                                                    raise TypeError("position must be a tuple of 2 positive integers")
 
-                                                                                                                            """ Prints Square """
+                                                                                                                                                                                    def area(self):
+                                                                                                                                                                                                """ Calculate the area """
+                                                                                                                                                                                                        return self.__size * self.__size
 
-                                                                                                                                def my_print(self):
-                                                                                                                                            if self.__size > 0:
-                                                                                                                                                            for i in range(self.__position[1]):
-                                                                                                                                                                                print("")
-                                                                                                                                                                                            for i in range(self.__size):
-                                                                                                                                                                                                                for j in range(self.__position[0]):
-                                                                                                                                                                                                                                        print(" ", end="")
-                                                                                                                                                                                                                                                        for j in range(self.__size):
-                                                                                                                                                                                                                                                                                print("#", end="")
-                                                                                                                                                                                                                                                                                                print("")
-                                                                                                                                                                                                                                                        else:
-                                                                                                                                                                                                                                                                        print("")
-
-                                                                                                                                                                                                                                                                            """ Getter Position """
-                                                                                                                                                                                                                                                                                @property
-                                                                                                                                                                                                                                                                                    def position(self):
-                                                                                                                                                                                                                                                                                                return self.__position
-
-                                                                                                                                                                                                                                                                                                """ Setter position """
-                                                                                                                                                                                                                                                                                                    @position.setter
-                                                                                                                                                                                                                                                                                                        def position(self, value):
-                                                                                                                                                                                                                                                                                                                    if type(value) != tuple or len(value) != 2:
-                                                                                                                                                                                                                                                                                                                                    raise TypeError("position must be a tuple of 2 positive integers")
-                                                                                                                                                                                                                                                                                                                                        if type(value[0]) != int or type(value[1]) != int:
-                                                                                                                                                                                                                                                                                                                                                        raise TypeError("position must be a tuple of 2 positive integers")
-                                                                                                                                                                                                                                                                                                                                                            if value[0] < 0 or value[1] < 0:
-                                                                                                                                                                                                                                                                                                                                                                            raise TypeError("position must be a tuple of 2 positive integers")
-                                                                                                                                                                                                                                                                                                                                                                                self.__position = value
+                                                                                                                                                                                                        def my_print(self):
+                                                                                                                                                                                                                    """ Printing the square """
+                                                                                                                                                                                                                            if self.__size == 0:
+                                                                                                                                                                                                                                            print("")
+                                                                                                                                                                                                                            else:
+                                                                                                                                                                                                                                            for i in range(self.position[1]):
+                                                                                                                                                                                                                                                                print("")
+                                                                                                                                                                                                                                                                            for i in range(self.__size):
+                                                                                                                                                                                                                                                                                                for j in range(self.__position[0]):
+                                                                                                                                                                                                                                                                                                                        print(" ", end="")
+                                                                                                                                                                                                                                                                                                                                        for k in range(self.__size):
+                                                                                                                                                                                                                                                                                                                                                                print("#", end="")
+                                                                                                                                                                                                                                                                                                                                                                                print("")
