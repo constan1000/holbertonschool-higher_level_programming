@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Class square """
+""" Defining a Square class contains The size ? """
 
 
 class Square:
-        """ Initialize"""
-
-            def __init__(self, size):
-                        self.__size = size
+    """ New item SIZEEEE """
+    def __init__(self, size):
+        """ Initialize the size ? please ?"""
+        self.__size = size
