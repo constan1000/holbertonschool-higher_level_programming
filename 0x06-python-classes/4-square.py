@@ -1,31 +1,28 @@
 #!/usr/bin/python3
-""" Class square """
+""" Defining a Square class contains The size ? """
 
 
 class Square:
-        """ Initialize"""
+    """ New item SIZEEEE """
 
-            def __init__(self, size=0):
-                        if type(size) != int:
-                                        raise TypeError("size must be an integer")
-                                            if size < 0:
-                                                            raise ValueError("size must be >= 0")
-                                                                self.__size = size
+    def __init__(self, size=0):
+        """ Initialize the size ? please ?"""
+        self.size = size
 
-                                                                    """Define square area """
+    @property
+    def size(self):
+        """ Retrieving it ?"""
+        return self.__size
 
-                                                                        def area(self):
-                                                                                    area = self.__size ** 2
-                                                                                            return area
-                                                                                            """ Getter"""
-                                                                                                @property
-                                                                                                    def size(self):
-                                                                                                                return self.__size
-                                                                                                                """ Setter"""
-                                                                                                                    @size.setter
-                                                                                                                        def size(self, value):
-                                                                                                                                    if type(value) is not int:
-                                                                                                                                                    raise TypeError('size must be an integer')
-                                                                                                                                                        if value < 0:
-                                                                                                                                                                        raise ValueError('size must be >= 0')
-                                                                                                                                                                            self.__size = value
+    @size.setter
+    def size(self, nsize):
+        """ Setting the Mine ?"""
+        if type(nsize) != int:
+            raise TypeError("size must be an integer")
+        elif nsize < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = nsize
+
+    def area(self):
+        """ Calculate the area """
+        return self.__size * self.__size
