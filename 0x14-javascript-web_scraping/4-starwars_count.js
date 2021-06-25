@@ -1,17 +1,16 @@
 #!/usr/bin/node
 
-const request = require('request');
-const url = process.argv[2];
-request.get(url, function(err, response, body) {
-    let count = 0;
-    if (err) {
-        console.log(err);
+const req = require('request');
+req.get(process.argv[2], function(error, res, b) {
+    let num = 0;
+    if (error) {
+        console.log(error);
     }
-    const data = JSON.parse(body);
-    for (let i = 0; data.results[i] !== undefined; i++) {
-        if (data.results[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-            count++;
+    const info = JSON.parse(b);
+    for (let i = 0; info.results[i] !== undefined; i++) {
+        if (info.results[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
+            num++;
         }
     }
-    console.log(count);
+    console.log(num);
 });
