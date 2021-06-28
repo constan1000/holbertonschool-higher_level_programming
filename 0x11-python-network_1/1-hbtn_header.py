@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-""" X-Request- Id """
-import sys
-import urllib.request
+"""
+fetch X-Request-Id from header response with url
+introduced as argument
+"""
 
+if __name__ == '__main__':
+    import urllib.request
+    import sys
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        content = response.getheader('X-Request-Id')
 
-if __name__ == "__main__":
-    link = sys.argv[1]
-    req = urllib.request.Request(link)
-    with urllib.request.urlopen(req) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    print(content)
