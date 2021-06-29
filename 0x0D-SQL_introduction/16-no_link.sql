@@ -1,3 +1,5 @@
--- Say my name now
--- seventeenth task (Task 16)
-SELECT `score`, `name` FROM `second_table` WHERE `name` != "" ORDER BY `score` DESC;
+-- sort records in second_table where name is non-null
+SELECT `score`, `name`
+FROM `second_table`
+WHERE `name` IS NOT NULL
+ORDER BY `score` DESC;

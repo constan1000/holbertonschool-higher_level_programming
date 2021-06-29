@@ -1,92 +1,66 @@
 #!/usr/bin/python3
-"""This module holds a function
-    with class Square
-    """
+"""Module that contains 'Square(Rectangle)' class"""
+
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """class Square that inherits from Rectangle
-    Arguments:
-        Rectangle {[class]} -- Rectangle class
-    """
-
+    """Representation of a square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """constructor method
-        Arguments:
-            size {[int]} -- size of the square
-        Keyword Arguments:
-            x {int} -- x value (default: {0})
-            y {int} -- y value (default: {0})
-            id {[int]} -- unique number that
-            identify the object (default: {None})
-        """
+        """Initializates the square"""
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """size getter
-        Returns:
-            [int] -- size of the square
-        """
+        """Get private instance of 'size'"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """size setter
-        Arguments:
-            value {[obj]} -- value to assign
-        """
+        """Set private instance of attribute 'size'"""
         self.width = value
         self.height = value
 
     def __str__(self):
-        """"method with representation as a string
-        Returns:
-            [str] -- string of the square
-        """
-        str_id = str(self.id)
-        str_height = str(self.height)
-        str_x = str(self.x)
-        str_y = str(self.y)
-        str_new = "[Square] (" + str_id + ") " + str_x + "/" + str_y + " - "
-        str_new = str_new + str_height
-        return str_new
+        """Representation of a square by a data string"""
+        return "[{type}] ({id}) {x}/{y} - {size}".format(
+            type=self.__class__.__name__,
+            id=self.id,
+            x=self.x,
+            y=self.y,
+            size=self.width
+        )
 
     def update(self, *args, **kwargs):
-        """method that update an instance
-        """
-        if args:
-            index = 0
-            for index, arg in enumerate(args):
+        """Public method that assigns a key/value argument to attributes"""
+        if len(args):
+            for index, value in enumerate(args):
                 if index == 0:
-                    self.id = arg
+                    self.id = value
                 elif index == 1:
-                    self.width = arg
-                    self.height = arg
+                    self.size = value
                 elif index == 2:
-                    self.x = arg
+                    self.x = value
                 elif index == 3:
-                    self.y = arg
+                    self.y = value
         else:
-            if "id" in kwargs:
-                self.id = kwargs["id"]
-            if "size" in kwargs:
-                self.width = kwargs["size"]
-                self.height = kwargs["size"]
-            if "x" in kwargs:
-                self.x = kwargs["x"]
-            if "y" in kwargs:
-                self.y = kwargs["y"]
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
-        """public method that gives a instance as a dictionary
-        Returns:
-            [dic] -- instance representation
-        """
-        return {
+        """Dictionary representation of a Square"""
+        dic_square = {
             "id": self.id,
+            "size": self.size,
             "x": self.x,
-            "size": self.width,
-            "y": self.y,
+            "y": self.y
         }
+        return dic_square

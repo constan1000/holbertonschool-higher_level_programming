@@ -1,4 +1,9 @@
 #!/usr/bin/python3
-def search_replace(my_list, search, replace):
-            new_list = [replace if word == search else word for word in my_list]
-                return new_list
+def element_at(my_list, idx):
+
+    list_len = len(my_list)
+
+    if idx < 0 or list_len <= idx:
+        return None
+
+    return my_list[idx]

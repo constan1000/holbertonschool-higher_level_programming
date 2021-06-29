@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
-        for x, y in a_dictionary.copy().items():
-                    if y == value:
-                                    del a_dictionary[x]
-                                        return a_dictionary
+    if a_dictionary:
+        for key, val in list(a_dictionary.items()):
+            if val == value:
+                    del a_dictionary[key]
+    return a_dictionary

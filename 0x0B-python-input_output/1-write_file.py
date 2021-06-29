@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-""" write in a file """
+"""Module function write_file"""
 
 
 def write_file(filename="", text=""):
-    """ write that """
-    with open(filename, mode='w', encoding='utf-8') as f:
-        return f.write(text)
+    """Writes a string text file (UTF8) and returns number of char written"""
+    with open(filename, "w", encoding="utf-8") as w_f:
+        return w_f.write(text)

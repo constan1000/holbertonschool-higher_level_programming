@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""
-same as 0-hbtn_status with requests model
+"""Returns a formatted response using urllib
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import requests
-    html = requests.get('https://intranet.hbtn.io/status')
+
+    req = requests.get('https://intranet.hbtn.io/status')
+    data = req.text
+    data_type = type(data)
+
     print("Body response:")
-    print("\t- type: {}".format(html.text.__class__))
-    print("\t- content: {}".format(html.text))
+    print("\t- type: {}".format(data_type))
+    print("\t- content: {}".format(data))

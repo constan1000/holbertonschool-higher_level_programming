@@ -1,3 +1,2 @@
--- how to print all the databases
--- First task (Task 0)
+-- lists all databases
 SHOW DATABASES;

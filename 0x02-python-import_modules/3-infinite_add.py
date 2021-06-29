@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-from sys import argv
-if __name__ == "__main__":
-        sum = 0
+import sys
 
-            for count in argv[1:]:
-                        sum += int(count)
-                            print("{}".format(sum))
+if __name__ == "__main__":
+    print(sum(map(int, sys.argv[1:])))

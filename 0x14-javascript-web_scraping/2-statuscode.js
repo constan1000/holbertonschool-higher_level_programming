@@ -1,9 +1,10 @@
 #!/usr/bin/node
-
+// Make a GET request and print the status code
 const request = require('request');
-const url = process.argv[2];
-request
-    .get(url)
-    .on('response', function(response) {
-        console.log('code: ' + response.statusCode);
-    });
+request(process.argv[2], (err, resp, body) => {
+  if (err) {
+    console.log(err);
+  } else if (resp) {
+    console.log(`code: ${resp.statusCode}`);
+  }
+});

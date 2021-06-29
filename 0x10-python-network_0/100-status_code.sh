@@ -1,3 +1,3 @@
 #!/bin/bash
-#get statue code from http header  work just task(curl -sI "$1" | grep "HTTP/" |  cut -d " " -f 2)
-curl -so /dev/null --write-out "%{http_code}" "$1"
+# Send a GET request to a URL and display the status code of the response
+curl -sL -o /dev/null -w '%{http_code}' -- "$1"

@@ -1,15 +1,19 @@
-#!usr/bin/python3
-"""Add two integers"""
+#!/usr/bin/python3
+"""Module provides a
+function 'add_integer'
+that performs
+integer
+addition"""
 
 
 def add_integer(a, b=98):
-        """ Function to add two integers"""
-            if type(a) is int or type(a) is float:
-                        pass
-            else:
-                        raise TypeError("a must be an integer")
-                        if type(b) is int or type(b) is float:
-                                    pass
-                        else:
-                                    raise TypeError("b must be an integer")
-                                    return int(a+b)
+    """Function that
+    return the sum of two
+    integers or floats"""
+    if not isinstance(a, (float, int)):
+        raise TypeError("a must be an integer")
+
+    if not isinstance(b, (float, int)):
+        raise TypeError("b must be an integer")
+
+    return int(a) + int(b)

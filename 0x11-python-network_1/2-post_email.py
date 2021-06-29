@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""
-sends a POST request to the passed URL with the
-email as a parameter, and displays the body of the response
+"""Sends a POST request with a parameter
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import urllib.request
+    import urllib.parse
     import sys
+
     url = sys.argv[1]
-    value = {"email": sys.argv[2]}
-    data = urllib.parse.urlencode(value)
-    data = data.encode("ascii")
+    email = sys.argv[2]
+    url_param = {'email': email}
+
+    data = urllib.parse.urlencode(url_param)
+    data = data.encode('utf8')
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
-        info = response.read()
-    print(info.decode("ascii"))
+        print(response.read().decode('utf8'))

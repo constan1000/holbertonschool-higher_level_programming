@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" Creating a new Rectangle """
+"""Module that define an empty 'Rectangle' Class to represent a rectangle
+"""
 
 
 class Rectangle:
-        """ Just Rectangle ? """
-        pass
+    """Empty definition to represent the 'rectangle' class
+    """

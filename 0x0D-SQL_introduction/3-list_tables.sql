@@ -1,3 +1,2 @@
--- how to see tables
--- Fourth task (Task 3)
+-- show tables in database givent as an argument
 SHOW TABLES;

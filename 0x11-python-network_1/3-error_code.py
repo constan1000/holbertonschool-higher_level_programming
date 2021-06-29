@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-"""
-request a body if error display statue code
+"""Sends a request and shows if there is an HTTP error
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import urllib.request
     import urllib.error
     import sys
-    url = sys.argv[1]
 
-    req = urllib.request.Request(url)
+    url = sys.argv[1]
     try:
+        req = urllib.request.Request(url)
         with urllib.request.urlopen(req) as response:
-            info = response.read()
-            print(info.decode("ascii"))
+            print(response.read().decode('utf8'))
     except urllib.error.HTTPError as e:
-        print("Error code: {}".format(e.code))
+        print('Error code:', e.code)

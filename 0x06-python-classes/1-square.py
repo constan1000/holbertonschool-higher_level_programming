@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-""" Defining a Square class contains The size ? """
+# -*- coding: utf-8 -*-
+"""Class named Square with a private instace attribute
+"""
 
 
 class Square:
-    """ New item SIZEEEE """
+    """Definition of a Square
+    """
     def __init__(self, size):
-        """ Initialize the size ? please ?"""
+        """Instantiate a Square
+        """
         self.__size = size

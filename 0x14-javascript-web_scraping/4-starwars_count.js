@@ -1,16 +1,19 @@
 #!/usr/bin/node
-
-const req = require('request');
-req.get(process.argv[2], function(error, res, b) {
-    let num = 0;
-    if (error) {
-        console.log(error);
-    }
-    const info = JSON.parse(b);
-    for (let i = 0; info.results[i] !== undefined; i++) {
-        if (info.results[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-            num++;
+// Print the number of movies having the character Wedge Antilles
+const request = require('request');
+request(process.argv[2], { json: true }, (err, resp, body) => {
+  if (err) {
+    console.log(err);
+  } else if (body) {
+    const results = body.results;
+    let count = 0;
+    for (const i in results) {
+      for (const j in results[i].characters) {
+        if (results[i].characters[j].endsWith('/18/')) {
+          count++;
         }
+      }
     }
-    console.log(num);
+    console.log(count);
+  }
 });

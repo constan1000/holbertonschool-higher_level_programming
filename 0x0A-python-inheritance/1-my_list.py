@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-""" Class """
+"""Module MyList class with all the elements of the list of type int"""
 
 
 class MyList(list):
-    """class that inherits from list"""
+    """subclass of list"""
+    def __init__(self):
+        """initializes the object"""
+        super().__init__()
+
     def print_sorted(self):
-        """print sorted list"""
+        """prints the list in ascending order"""
         print(sorted(self))

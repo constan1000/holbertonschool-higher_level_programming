@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" loading from a file ?"""
+"""Module function load_from_json_file"""
+
 import json
 
 
 def load_from_json_file(filename):
-    """ Python object"""
-    with open(filename) as f:
-        return json.load(f)
+    """creates an Object from a 'JSON file'"""
+    with open(filename, 'r', encoding='utf-8') as lfjf:
+        return json.load(lfjf)

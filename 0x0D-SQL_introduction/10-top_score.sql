@@ -1,3 +1,3 @@
--- I Care Only About The Best
--- eleventh task (Task 10)
+-- sort records in second_table by score
 SELECT `score`, `name` FROM `second_table` ORDER BY `score` DESC;
+

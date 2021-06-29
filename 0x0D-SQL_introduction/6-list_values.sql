@@ -1,3 +1,2 @@
--- how to list all rows of tables
--- seventh task (Task 6)
+-- list all rows of first_table
 SELECT * FROM `first_table`;

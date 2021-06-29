@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""
-same as 2-post_email with requests models
+"""Sends a POST request with a parameter
 """
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import requests
     import sys
-    para = {"email": sys.argv[2]}
-    r = requests.post(sys.argv[1], data=para)
-    print(r.text)
+
+    url = sys.argv[1]
+    email = sys.argv[2]
+    url_param = {'email': email}
+
+    req = requests.post(url, data=url_param)
+    print(req.text)

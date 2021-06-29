@@ -1,20 +1,32 @@
 #!/usr/bin/python3
 """
-Write a python file that contains the class
-definition of a State
+Provides a State class to map to objects in a states table
 """
+
 import sqlalchemy
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+
+
 Base = declarative_base()
 
 
 class State(Base):
-    """
-        State class
+    """Representation of a State
     """
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, nullable=False)
-    name = Column(String(128), nullable=False)
-    cities = relationship("City", backref="state")
+    id = Column(
+        Integer,
+        autoincrement=True,
+        nullable=False,
+        primary_key=True,
+        unique=True,
+    )
+    name = Column(
+        String(128),
+        nullable=False,
+    )
+    cities = relationship(
+        'City', backref='state', cascade='all, delete-orphan'
+        )
