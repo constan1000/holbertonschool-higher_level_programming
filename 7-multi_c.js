@@ -1,10 +1,11 @@
 #!/usr/bin/node
 
-const MyVar = process.argv[2];
-if (isNaN(MyVar) === true) {
+'use strict';
+let x = process.argv[2];
+if (isNaN(x)) {
     console.log('Missing number of occurrences');
 } else {
-    for (let i = 0; i < MyVar; i++) {
+    for (let i = 0; i < x; i++) {
         console.log('C is fun');
     }
 }
