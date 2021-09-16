@@ -1,8 +1,9 @@
 #!/usr/bin/node
 
-const MyVar = process.argv[2];
-if (isNaN(MyVar) === true) {
+'use strict';
+let arg = process.argv[2];
+if (isNaN(arg)) {
     console.log('Not a number');
 } else {
-    console.log('My number: ' + MyVar);
+    console.log('My number: ' + arg);
 }
