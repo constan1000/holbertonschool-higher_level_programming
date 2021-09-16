@@ -1,12 +1,9 @@
 #!/usr/bin/node
 
-let x = 0;
-process.argv.forEach((val, index) => {
-    x++;
-    if (index === 2) {
-        console.log(`${val}`);
-    }
-});
-if (x <= 2) {
+'use strict';
+let arg = process.argv[2];
+if (arg === undefined) {
     console.log('No argument');
+} else {
+    console.log(arg);
 }
